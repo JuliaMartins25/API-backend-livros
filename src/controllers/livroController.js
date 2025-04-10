@@ -12,8 +12,8 @@ class livroController {
     };
 
     create = async (req, res) => {
-        const { title, author, publisher, isbn, category, year, description} = req.body;
-    
+        const { title, author, publisher, isbn, category, year, description } = req.body;
+
         try {
             if (!title) {
                 return res.status(400).json({ erro: "Titulo é obrigatório" });
@@ -36,6 +36,33 @@ class livroController {
         } catch (error) {
             console.error(error);
             res.status(500).json({ erro: "Erro ao criar livro" });
+        }
+    };
+
+    update = async (req, res) => {
+        const { id } = req.params;
+        const { title, author, publisher, isbn, category, year, description } = req.body;
+
+        try {
+            const livroAtualizado = await livroModel.update(
+                Number(id),
+                title,
+                author,
+                publisher,
+                isbn,
+                category,
+                year,
+                description
+            );
+
+            if (!livroAtualizado) {
+                return res.status(404).json({ erro: "Livro não encontrado!" });
+            }
+
+            res.json(livroAtualizado);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ erro: "Erro ao atualizar livro!" });
         }
     };
 
