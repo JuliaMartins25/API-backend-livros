@@ -23,7 +23,7 @@ Atividade Avaliativa: Desenvolvimento de API Backend com CRUD Completo e Prisma 
 ## Exemplo de requisição
 **GET /livros**
 Retorna todos os livros.
-exemplo da resposta:
+**exemplo da resposta:**
 
  {
     "id": 1,
@@ -50,7 +50,7 @@ exemplo da resposta:
 **GET /livros/:id**
 Retorna um livro específico pelo ID.
 GET /livros/1
-exemplo da resposta:
+**exemplo da resposta:**
 {
   "id": 1,
   "title": "O Senhor dos Anéis",
@@ -64,7 +64,7 @@ exemplo da resposta:
 
 **POST /livros**
 Cria um novo livro.
-exemplo no body:
+**exemplo no body:**
 {
 "title": "O Hobbit",
   "author": "J.R.R. Tolkien",
@@ -75,7 +75,7 @@ exemplo no body:
   "description": "Uma aventura épica na Terra Média."
 }
 
-exemplo da resposta:
+**exemplo da resposta:**
 {
   "id": 3,
   "title": "O Hobbit",
@@ -90,7 +90,7 @@ exemplo da resposta:
 **PUT /livros/:id**
 Atualiza um livro existente pelo ID.
 PUT /livros/1
-exemplo do body:
+**exemplo do body:**
 {
   "title": "O Senhor dos Anéis - Edição Revisada",
   "author": "J.R.R. Tolkien",
@@ -101,7 +101,7 @@ exemplo do body:
   "description": "Uma edição revisada da maior obra de fantasia de todos os tempos."
 }
 
-exemplo da resposta:
+**exemplo da resposta:**
 {
   "id": 1,
   "title": "O Senhor dos Anéis - Edição Revisada",
@@ -116,7 +116,7 @@ exemplo da resposta:
 **DELETE /livros/:id**
 Exclui um livro pelo ID.
 DELETE /livros/1
-exemplo da resposta:
+**exemplo da resposta:**
 {
   "message": "Livro com ID 1 foi excluído com sucesso."
 }
