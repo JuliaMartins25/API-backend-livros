@@ -23,18 +23,103 @@ Atividade Avaliativa: Desenvolvimento de API Backend com CRUD Completo e Prisma 
 ## Exemplo de requisição
 **GET /livros**
 Retorna todos os livros.
+exemplo da resposta:
+
+ {
+    "id": 1,
+    "title": "O Senhor dos Anéis",
+    "author": "J.R.R. Tolkien",
+    "publisher": "HarperCollins",
+    "isbn": 9780261102385,
+    "category": "Fantasia",
+    "year": 1954,
+    "description": "Uma das maiores obras de fantasia de todos os tempos."
+  },
+   {
+    "id": 2,
+    "title": "O Hobbit",
+    "author": "J.R.R. Tolkien",
+    "publisher": "HarperCollins",
+    "isbn": 9780261102217,
+    "category": "Fantasia",
+    "year": 1937,
+    "description": "Uma aventura épica na Terra Média."
+  }
+
 
 **GET /livros/:id**
 Retorna um livro específico pelo ID.
+GET /livros/1
+exemplo da resposta:
+{
+  "id": 1,
+  "title": "O Senhor dos Anéis",
+  "author": "J.R.R. Tolkien",
+  "publisher": "HarperCollins",
+  "isbn": 9780261102385,
+  "category": "Fantasia",
+  "year": 1954,
+  "description": "Uma das maiores obras de fantasia de todos os tempos."
+}
 
 **POST /livros**
 Cria um novo livro.
+exemplo no body:
+{
+"title": "O Hobbit",
+  "author": "J.R.R. Tolkien",
+  "publisher": "HarperCollins",
+  "isbn": 9780261102217,
+  "category": "Fantasia",
+  "year": 1937,
+  "description": "Uma aventura épica na Terra Média."
+}
+
+exemplo da resposta:
+{
+  "id": 3,
+  "title": "O Hobbit",
+  "author": "J.R.R. Tolkien",
+  "publisher": "HarperCollins",
+  "isbn": 9780261102217,
+  "category": "Fantasia",
+  "year": 1937,
+  "description": "Uma aventura épica na Terra Média."
+}
 
 **PUT /livros/:id**
 Atualiza um livro existente pelo ID.
+PUT /livros/1
+exemplo do body:
+{
+  "title": "O Senhor dos Anéis - Edição Revisada",
+  "author": "J.R.R. Tolkien",
+  "publisher": "HarperCollins",
+  "isbn": 9780261102385,
+  "category": "Fantasia",
+  "year": 1954,
+  "description": "Uma edição revisada da maior obra de fantasia de todos os tempos."
+}
+
+exemplo da resposta:
+{
+  "id": 1,
+  "title": "O Senhor dos Anéis - Edição Revisada",
+  "author": "J.R.R. Tolkien",
+  "publisher": "HarperCollins",
+  "isbn": 9780261102385,
+  "category": "Fantasia",
+  "year": 1954,
+  "description": "Uma edição revisada da maior obra de fantasia de todos os tempos."
+}
 
 **DELETE /livros/:id**
 Exclui um livro pelo ID.
+DELETE /livros/1
+exemplo da resposta:
+{
+  "message": "Livro com ID 1 foi excluído com sucesso."
+}
 
 ## Decisões de design e arquitetura tomadas
 - Utilizar o ORM Prisma para manipulação do banco de dados.
@@ -45,6 +130,7 @@ Exclui um livro pelo ID.
 - Node.js
 - Express
 - Prisma
-- SQLite  
+- SQLite 
+- Thunder Client
 
   
