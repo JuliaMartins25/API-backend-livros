@@ -30,7 +30,7 @@ model Livro {
   publisher   String
   isbn        Int
   category    String
-  year        DateTime?
+  year        Int
   description String?
 
   createdAt DateTime @default(now())
