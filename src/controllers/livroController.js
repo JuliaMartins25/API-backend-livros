@@ -66,6 +66,23 @@ class livroController {
         }
     };
 
+    delete = async (req, res) => {
+        const { id } = req.params;
+
+        try {
+            const sucesso = await livroModel.delete(Number(id));
+
+            if (!sucesso) {
+                return res.status(404).json({ erro: "Livro não encontrado" });
+            }
+
+            res.status(200).send({ message: "Livro deletado com sucesso!" });
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ error: "Erro ao excluir livro!" });
+        }
+    };
+
 }
 
 export default new livroController();

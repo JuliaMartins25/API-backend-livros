@@ -5,5 +5,6 @@ const router = express.Router();
 router.get("/", livroController.getAll);
 router.post("/", livroController.create);
 router.put("/:id", livroController.update);
+router.delete("/:id", livroController.delete);
 
 export default router;

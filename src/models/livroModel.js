@@ -43,6 +43,20 @@ class LivroModel {
             throw error;
         }
     };
+
+    delete = async (id) => {
+        try {
+            const livroDeletado = await prisma.livro.delete({
+                where: { id },
+            });
+
+            return livroDeletado;
+        } catch (error) {
+            console.log("Erro ao deletar o livro!", error);
+            throw error;
+        }
+    };
+
 }
 
 export default new LivroModel();
