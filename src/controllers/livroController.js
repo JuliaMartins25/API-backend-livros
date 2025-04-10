@@ -83,6 +83,23 @@ class livroController {
         }
     };
 
+    getById = async (req, res) => {
+        const { id } = req.params;
+
+        try {
+            const livros = await livroModel.getById(parseInt(id));
+
+            if (!livros) {
+                return res.status(404).json({ erro: "Livro não encontrado" });
+            }
+
+            res.json(livros);
+        } catch (error) {
+            console.error(error);
+            res.status(500).json({ erro: "Erro ao buscar o livro" });
+        }
+    };
+
 }
 
 export default new livroController();

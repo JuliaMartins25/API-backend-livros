@@ -57,6 +57,11 @@ class LivroModel {
         }
     };
 
+    getById = async (id) => {
+        return await prisma.livro.findUnique({
+            where: { id },
+        });
+    };
 }
 
 export default new LivroModel();
