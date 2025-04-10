@@ -22,3 +22,19 @@ model Task {
 
   @@map("tasks")
 }
+
+model Livro {
+  id          Int       @id @default(autoincrement())
+  title       String
+  author      String
+  publisher   String
+  isbn        Int
+  category    String
+  year        DateTime?
+  description String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("livros")
+}
